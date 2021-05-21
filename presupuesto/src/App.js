@@ -23,15 +23,16 @@ function App() {
         ...gastos,
         gasto
       ])
+
+      // para restar del presupuesto actual
+      const presupuestoRestante = restante - gasto.cantidad;
+      guardarRestante(presupuestoRestante);
+
+      // resetear a false
+      guardarCrearGasto(false)
+
     }
-
-    // para restar del presupuesto actual
-    const presupuestoRestante = restante - gasto.cantidad;
-    guardarRestante(presupuestoRestante);
-
-    // resetear a false
-    guardarCrearGasto(false)
-  }, [gasto]);
+  }, [crearGasto, gasto, gastos, restante]);
 
 
 
